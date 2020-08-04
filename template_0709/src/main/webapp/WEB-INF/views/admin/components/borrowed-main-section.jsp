@@ -54,7 +54,7 @@
 													<th>Book ID</th>
 													<th>Issue Date</th>
 													<th>Expiration Date</th>
-													<th>Return Date</th>
+													<!-- <th>Return Date</th> -->
 													<!-- <th>User Block Date</th>Shouldn't this be in User's DB? -->
 													<th>Extention
 													<th>
@@ -82,7 +82,7 @@
 														<td>${itm.renbid }</td>
 														<td>${itm.isdate }</td>
 														<td>${itm.exdate }</td>
-														<td>${itm.retdate }</td>
+														<%-- <td>${itm.retdate }</td> --%>
 														<%-- 	<td>${itm.bldate }</td> --%>
 														<td>${itm.isExpanded }</td>
 

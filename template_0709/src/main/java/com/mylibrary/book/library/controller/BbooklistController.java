@@ -31,6 +31,7 @@ public class BbooklistController {
 			cntPerPage = "5";
 		}
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		
 		model.addAttribute("bbooklist", Bbooklistservice.selectBoard(vo));
 		model.addAttribute("paging", vo);
 //		model.addAttribute("viewAll", Bbooklistservice.selectBoard(vo));

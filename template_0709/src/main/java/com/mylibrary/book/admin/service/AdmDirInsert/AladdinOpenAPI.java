@@ -16,8 +16,8 @@ public class AladdinOpenAPI {
 	
 	final static String Driver = "oracle.jdbc.driver.OracleDriver";
 	final static String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-	final static String user = "ssssuu";
-	final static String psw = "9531";
+	final static String user = "DB-USER";
+	final static String psw = "DB-PW";
 	
 	static Connection conn = null;
 	static PreparedStatement pstmt = null;
@@ -268,7 +268,7 @@ public class AladdinOpenAPI {
 							pstmt.setString(5, item.Isbn13);
 							pstmt.setString(6, item.CategoryName);
 							pstmt.setString(7, getDeciDiv(item));
-							pstmt.setInt(8, 1);
+							pstmt.setInt(8, 0);
 							pstmt.setString(9, item.Description);
 							pstmt.setInt(10, 0);
 							pstmt.setString(11, item.Cover);

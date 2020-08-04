@@ -37,5 +37,6 @@
 - Notice (check & update notices / insert new notices / delete notices)
 
 ## ER Diagram
-![final_erd](https://user-images.githubusercontent.com/60098657/89090336-48c00b80-d3dd-11ea-9f87-d996dcc0e289.png)
+![real_final_erd](https://user-images.githubusercontent.com/60098657/89162271-cc7d2200-d5ae-11ea-9179-45101777ac93.png)
+
 

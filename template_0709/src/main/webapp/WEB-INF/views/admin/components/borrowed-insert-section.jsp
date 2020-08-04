@@ -58,7 +58,7 @@
 										<input class="form-control" type="text" placeholder="Exdate" name="exdate">
 									</div>
 								</div>
-								<div class="form-group row">
+								<!-- <div class="form-group row">
 									<label class="col-sm-2 col-form-label">Retdate</label>
 									<div class="col-sm-7">
 										<input class="form-control" type="text" placeholder="Retdate" name="retdate">
@@ -69,7 +69,7 @@
 									<div class="col-sm-7">
 										<input class="form-control" type="text" placeholder="Bldate" name="bldate">
 									</div>
-								</div>
+								</div> -->
 								
 								<div class="form-group row">
 									<label class="col-sm-2 col-form-label">IsExpanded</label>

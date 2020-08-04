@@ -41,8 +41,8 @@ public class BbooklistServiceImpl implements BbooklistService {
 
 
 	@Override
-	@ReadThroughSingleCache(namespace="library")
-	public List<BooklistVO> selectBoard(@ParameterValueKeyProvider PagingVO vo) {
+	@ReadThroughSingleCache(namespace="library") 
+	public List<BooklistVO> selectBoard(@ParameterValueKeyProvider  PagingVO vo) {
 		BbooklistMapper booklistMapper = sqlSession.getMapper(BbooklistMapper.class);
 		return booklistMapper.selectBoard(vo);
 	}

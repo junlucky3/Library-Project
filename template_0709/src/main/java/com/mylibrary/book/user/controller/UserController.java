@@ -1,7 +1,7 @@
 package com.mylibrary.book.user.controller;
 
-import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mylibrary.book.admin.dao.badmin.BadminDAO;
+import com.mylibrary.book.admin.service.borrowed.BorrowedService;
+import com.mylibrary.book.admin.service.reserved.ReservedService;
 import com.mylibrary.book.admin.vo.BadminVO;
 import com.mylibrary.book.library.service.BbooklistService;
 import com.mylibrary.book.library.service.UserNoticeService;
@@ -39,6 +41,12 @@ public class UserController {
 
 	@Inject
 	BadminDAO badminDAO;
+	
+	@Inject
+	BorrowedService borrowedService;
+	
+	@Inject
+	ReservedService reservedService;
 
 	// index 페이지로 이동
 	@RequestMapping("/index")
@@ -129,9 +137,18 @@ public class UserController {
 	@RequestMapping("/mypage")
 	public String mypage(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		Map<String, Object> user = userDao.selectUserNoAs((String) session.getAttribute("email"));
+		String email = (String) session.getAttribute("email");
+		Map<String, Object> user = userDao.selectUserNoAs(email);
 		System.out.println(user);
 		request.setAttribute("user", user);
+		
+		List<Map<String,String>> bss = borrowedService.showLendingList();
+		List<Map<String,String>> rss = reservedService.showReserveList();
+		
+//		if(temp.get(0).containsKey("EMAIL")) System.out.println("email key is contained !!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		
+		request.setAttribute("rentlist", bss);
+		request.setAttribute("reslist",rss);
 		return "library/mypage";
 	}
 

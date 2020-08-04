@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </resultMap>
 
 	<select id="bshowList" resultMap="bbooklistMap">
-		SELECT * FROM booklist
+		SELECT * FROM booklist order by bcount desc
 	</select>
 
 	<select id="countBoard" resultType="int">
@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 페이징 처리 후 게시글 조회 -->
 	<select id="selectBoard" resultType="com.mylibrary.book.admin.vo.BooklistVO">	
-		select * from (select rownum rn, a.* from (select * from booklist order by bid desc) a) where rn between #{start} and #{end}	
+		select * from (select rownum rn, a.* from (select * from booklist order by bcount desc) a) where rn between #{start} and #{end}	
 	</select>	
 	
 	<select id="selectCount" resultMap="bbooklistMap">

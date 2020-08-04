@@ -50,5 +50,11 @@ public class BgenServiceImpl implements BgenService{
 		sqlSession.getMapper(BgenMapper.class).deleteBgen(email);
 		System.out.println("delete user info successfully");
 	}
+
+	@Override
+	public int userCount() {
+		return sqlSession.getMapper(BgenMapper.class).userCount();
+	}
+	
 	
 }

@@ -9,4 +9,5 @@ public interface BgenService {
 	public BgenVO getBgen(String email);
 	public void modifyUserInfo(BgenVO vo);
 	public void deleteUserInfo(String email);
+	public int userCount();
 }

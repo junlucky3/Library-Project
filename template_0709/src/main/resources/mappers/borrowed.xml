@@ -5,14 +5,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.mylibrary.book.admin.mapper.BorrowedMapper">
 	<resultMap type="com.mylibrary.book.admin.vo.BorrowedVO" id="borrowedMap">
-	<result property="rentid" column="rentid"/>
-	<result property="renemail" column="renemail"/>
-	<result property="renbid" column="renbid"/>
-	<result property="isdate" column="isdate"/>
-	<result property="exdate" column="exdate"/>
-	<result property="retdate" column="retdate"/>
-	<result property="bldate" column="bldate"/>
-	<result property="isExpanded" column="isExpanded"/>
+		<result property="rentid" column="rentid"/>
+		<result property="renemail" column="renemail"/>
+		<result property="renbid" column="renbid"/>
+		<result property="isdate" column="isdate"/>
+		<result property="exdate" column="exdate"/>
+		<result property="retdate" column="retdate"/>
+		<result property="bldate" column="bldate"/>
+		<result property="isExpanded" column="isExpanded"/>
 	</resultMap>
 	
 	<select id="selectAll" resultMap="borrowedMap">
@@ -26,5 +26,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="borrowedDeleteByEmail" parameterType="String">
 		delete from rentinfo where renemail=#{renemail}
 	</delete>
+	
+	<select id="showLendingList" resultType="map">
+		select bo.title, ren.isdate, ren.exdate, ren.renemail as email from booklist bo join rentinfo ren on bo.bid=ren.renbid
+	</select>
 
 </mapper>

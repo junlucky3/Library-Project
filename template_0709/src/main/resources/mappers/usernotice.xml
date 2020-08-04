@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="showList" resultMap="userNoticeMap">
-		SELECT * FROM BNOTICE
+		SELECT * FROM BNOTICE order by to_date(uldate) desc
 	</select>
 	
 	<select id="boardNotice" resultMap="userNoticeMap">

@@ -9,8 +9,8 @@ public class AladinOpenAPI {
 
 	final static String Driver = "oracle.jdbc.driver.OracleDriver";
 	final static String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-	final static String user = "ssssuu";
-	final static String psw = "9531";
+	final static String user = "DB-USER";
+	final static String psw = "DB-PW";
 	
 	static Connection conn = null;
 	static PreparedStatement pstmt = null;

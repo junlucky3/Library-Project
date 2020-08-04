@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script>
     /* function passwordReset(){
         var formData = $("#passwordReset").serialize();
@@ -91,41 +93,103 @@
 															class="input-text">
 													</p>
 													<div class="clear"></div>
-													<input type="submit" value="Password reset" name="Password reset"
-														class="button btn btn-default" onclick="passwordReset(); return false;">
+													<input type="submit" value="Password reset"
+														name="Password reset" class="button btn btn-default"
+														onclick="passwordReset(); return false;">
 													<div class="clear"></div>
 												</form>
-												<br>
+												<br><br>
 												<form id="udpateInform" class="udpateInform">
 													<p class="form-row input-required">
-														<label> <span class="first-letter">NAME : ${ user.NAME }</span> <span
-															class="second-letter">*</span>
+														<label> <span class="first-letter">NAME :
+																${ user.NAME }</span> <span class="second-letter">*</span>
 														</label> <input type="text" id="name" name="name"
 															class="input-text">
 													</p>
 													<p class="form-row input-required">
-														<label> <span class="first-letter">BIRTH : ${ user.BIRTH }</span> <span
-															class="second-letter">*</span>
+														<label> <span class="first-letter">BIRTH :
+																${ user.BIRTH }</span> <span class="second-letter">*</span>
 														</label> <input type="text" id="birth" name="birth"
 															class="input-text">
 													</p>
 													<p class="form-row input-required">
-														<label> <span class="first-letter">PHONE : ${ user.PHONE }</span> <span
-															class="second-letter">*</span>
+														<label> <span class="first-letter">PHONE :
+																${ user.PHONE }</span> <span class="second-letter">*</span>
 														</label> <input type="text" id="phone" name="phone"
 															class="input-text">
 													</p>
 													<p class="form-row input-required">
-														<label> <span class="first-letter">ADDRESS : ${ user.ADDRESS }</span>
-															<span class="second-letter">*</span>
+														<label> <span class="first-letter">ADDRESS
+																: ${ user.ADDRESS }</span> <span class="second-letter">*</span>
 														</label> <input type="text" id="address" name="address"
 															class="input-text">
 													</p>
 													<div class="clear"></div>
 													<input type="submit" value="Update" name="Inform reset"
-														class="button btn btn-default" onclick="udpateInform(); return false;">
+														class="button btn btn-default"
+														onclick="udpateInform(); return false;">
 													<div class="clear"></div>
 												</form>
+												<br><hr><br>
+												<h3>Lendded List</h3><br>
+												<table class="table table-bordered" id="dataTable3"
+													width="100%" cellspacing="0">
+													<thead>
+														<tr>
+															<!-- <th>Notice ID</th> -->
+															<th>Title</th>
+															<th>Borrowed date</th>
+															<th>Expired date</th>
+															<!-- <th></th> -->
+														</tr>
+													</thead>
+													<tfoot style="border-color: white;">
+														<tr>
+
+
+														</tr>
+													</tfoot>
+													<tbody>
+														<c:forEach var="itm" items="${rentlist}">
+															<c:if test="${sessionScope.email == itm.EMAIL }">
+																<tr>
+																	<td>${itm.TITLE}</td>
+																	<td>${itm.ISDATE}</td>
+																	<td>${itm.EXDATE}</td>
+																</tr>
+															</c:if>
+														</c:forEach>
+													</tbody>
+												</table>
+												<br><br>
+												<h3>Reserved List</h3><br>
+												<table class="table table-bordered" id="dataTable2"
+													width="100%" cellspacing="0">
+													<thead>
+														<tr>
+															<!-- <th>Notice ID</th> -->
+															<th>Title</th>
+															<th>Date</th>
+															<!-- <th></th> -->
+														</tr>
+													</thead>
+													<tfoot style="border-color: white;">
+														<tr>
+
+
+														</tr>
+													</tfoot>
+													<tbody>
+														<c:forEach var="itm" items="${reslist}">
+															<c:if test="${sessionScope.email == itm.EMAIL }">
+																<tr>
+																	<td>${itm.TITLE}</td>
+																	<td>${itm.RESDATE}</td>
+																</tr>
+															</c:if>
+														</c:forEach>
+													</tbody>
+												</table>
 											</div>
 										</div>
 									</div>

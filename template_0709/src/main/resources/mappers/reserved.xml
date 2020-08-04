@@ -23,5 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	delete from resinfo where resemail=#{resemail}
 </delete>
 
+<select id="showReserveList" resultType="map">
+	select bo.title, res.resdate, res.resemail as email from booklist bo join resinfo res on bo.bid=res.resbid
+</select>
 
 </mapper>

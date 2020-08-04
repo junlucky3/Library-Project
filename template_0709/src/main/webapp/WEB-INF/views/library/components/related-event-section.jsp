@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
 	<div class="related-event text-center">
-		<h2 class="section-title">NOTICE</h2>
+		<a href="userNoticeMain"><h2 class="section-title">NOTICE</h2></a>
 		<span class="underline center"></span>
 		<p class="lead">There is a lot of new stuff going on! Don't miss out!</p>
 		<div class="owl-carousel-event">
@@ -19,7 +19,7 @@
 								<li><i class="fa fa-calendar"></i>${bno.uldate}</li>
 							</ul>
 							<h4>
-								<a>${bno.title}</a>
+								<a href="userNoticeDetail?nid=${bno.nid }">${bno.title}</a>
 							</h4>
 							<br>
 						</header>

@@ -12,9 +12,9 @@
 						<jsp:include page="search-section.jsp" flush="false" />
 					</div>
 					<div class="row">
-						<div class="col-md-9 col-md-push-3">
+						<!-- <div class="col-md-9 col-md-push-3"> -->
 							<c:forEach var="itm" items="${bbooklist }">
-								<div class="books-list">
+								<div class="books-list" style="padding-right:100px;padding-left:100px;">
 									<article>
 										<div class="single-book-box">
 											<div class="post-thumbnail">
@@ -79,9 +79,9 @@
 									<a
 										href="${pageContext.request.contextPath}/user/BbooklistMain?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 								</c:if>
-							</div>
+							<!-- </div> -->
 						</div>
-						<div class="col-md-3 col-md-pull-9">
+						<%-- <div class="col-md-3 col-md-pull-9">
 							<aside id="secondary" class="sidebar widget-area"
 								data-accordion-group>
 								<div class="widget widget_recent_entries">
@@ -133,7 +133,7 @@
 									<div class="clearfix"></div>
 								</div>
 							</aside>
-						</div>
+						</div> --%>
 					</div>
 				</div>
 				<br> <br>

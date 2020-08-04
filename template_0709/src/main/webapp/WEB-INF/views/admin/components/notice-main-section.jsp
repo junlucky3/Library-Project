@@ -69,7 +69,7 @@
 															<%-- <button type="button" class="btn-secondry m-r5"
 																onclick="location.href='noticeDelete?nid=${itm.nid}'">Delete</button> --%>
 															<button type="button" class="btn-secondry m-r5" id="del"
-																onclick="confirm_delete(${itm.nid})" value="${itm.nid}">Delete</button></td>
+																onclick="confirm_delete('${itm.nid}')" value="${itm.nid}">Delete</button></td>
 													</tr>
 												</c:forEach>
 											</tbody>

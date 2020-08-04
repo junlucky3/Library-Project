@@ -25,4 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from buser where email=#{email}
 	</delete>
 	
+	<select id="userCount" resultType="int">
+		select count(*) from buser
+	</select>
+	
 </mapper>

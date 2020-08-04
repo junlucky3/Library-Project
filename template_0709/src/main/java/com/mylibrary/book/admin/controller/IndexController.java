@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mylibrary.book.admin.service.bgenerals.BgenService;
 import com.mylibrary.book.admin.service.income.IncomeService;
 import com.mylibrary.book.admin.service.index.IndexService;
 import com.mylibrary.book.admin.service.orders.OrdersService;
@@ -28,6 +29,9 @@ public class IndexController {
 	
 	@Autowired
 	private OrdersService ordersService;
+	
+	@Autowired
+	private BgenService bgenService;
 	
 	@RequestMapping("/index")
 	public ModelAndView showMain() {
@@ -52,7 +56,7 @@ public class IndexController {
 		mav.addObject("balance",Integer.toString(icm-odr));
 		mav.addObject("icm",icm);
 		mav.addObject("odr",odr);
-		
+		mav.addObject("usrs",bgenService.userCount());
 		
 		mav.setViewName("admin/index");
 		return mav;

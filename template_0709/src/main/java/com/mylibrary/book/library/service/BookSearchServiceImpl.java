@@ -19,7 +19,7 @@ public class BookSearchServiceImpl implements BookSearchService {
 
 
 	@Override
-	@ReadThroughAssignCache(namespace="library", assignedKey="searchlist")
+	@ReadThroughAssignCache(namespace="library", assignedKey="searchlist") 
 	public List<BooklistVO> showList() {
 		BbooklistMapper bbooklistMapper = sqlSession.getMapper(BbooklistMapper.class);
 		return bbooklistMapper.bshowList();
@@ -28,8 +28,10 @@ public class BookSearchServiceImpl implements BookSearchService {
 	@Override
 	public List<BooklistVO> searchBook(String title) {
 		List<BooklistVO> ret = new ArrayList<BooklistVO>();
+		long bfTime = System.currentTimeMillis();
 		List<BooklistVO> temp = showList();
-		
+		long afTime = System.currentTimeMillis();
+		System.out.println("searchBook : " + (afTime-bfTime) + "miliseconds");
 		for(BooklistVO bsv:temp) if(bsv.getTitle().contains(title)) ret.add(bsv);
 		return ret;
 	}

@@ -34,7 +34,7 @@
 																<!-- <th>Notice ID</th> -->
 																<th>Date</th>
 																<th>Title</th>
-																<th>Contents</th>
+																<!-- <th>Contents</th> -->
 																<!-- <th></th> -->
 															</tr>
 														</thead>
@@ -50,7 +50,7 @@
 																	<%-- <td>${itm.nid}</td> --%>
 																	<td><a href="userNoticeDetail?nid=${itm.nid}">${itm.uldate}</a></td>
 																	<td><a href="userNoticeDetail?nid=${itm.nid}">${itm.title}</a></td>
-																	<td><a href="userNoticeDetail?nid=${itm.nid}">${itm.ncontents}</a></td>
+																	<%-- <td><a href="userNoticeDetail?nid=${itm.nid}">${itm.ncontents}</a></td> --%>
 																</tr>
 															</c:forEach>
 														</tbody>

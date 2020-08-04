@@ -1,6 +1,7 @@
 package com.mylibrary.book.admin.service.reserved;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,11 @@ public class ReservedServiceImpl implements ReservedService {
 		ReservedMapper reservedMapper = sqlSession.getMapper(ReservedMapper.class);
 		reservedMapper.deleteReservedByEmail(resemail);
 	}
-
 	
+	@Override
+	public List<Map<String,String>> showReserveList(){
+		ReservedMapper reservedMapper = sqlSession.getMapper(ReservedMapper.class);
+		return reservedMapper.showReserveList();
+	}
 	
 }

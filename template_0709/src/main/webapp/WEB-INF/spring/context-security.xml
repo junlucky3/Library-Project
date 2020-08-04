@@ -18,6 +18,7 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 	<http pattern="/css/**" security="none" />
 	<http pattern="/images/**" security="none" />
 	<http pattern="/js/**" security="none" />
+	<http pattern="/fonts/**" security="none" />
 	
 	<http auto-config="true" use-expressions="true" create-session="never">
 	<!-- 0714

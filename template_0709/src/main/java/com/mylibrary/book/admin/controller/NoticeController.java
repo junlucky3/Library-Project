@@ -70,6 +70,7 @@ public class NoticeController {
 	@RequestMapping("/noticeInsertdo")
 	public String noticeInsertdo(@ModelAttribute NoticeVO vo) {
 		System.out.println("inserting...controller!");
+		System.out.println("vo_nid : " + vo.getNid());
 		noticeService.insertNotice(vo);
 		System.out.println("inserted successfully!");
 		return "redirect:noticeMain";
